@@ -1,0 +1,27 @@
+---
+# travis configuration gopml
+language: go
+
+# Force enable go modules (unnecessary for go > 1.14)
+env: GO111MODULE=on
+
+# versions
+go:
+  - 1.13.x
+  - 1.14.x
+  - master
+
+# install deps
+install: true
+
+script:
+  - go build
+  - go test -race -coverprofile=coverage.txt -covermode=atomic
+
+# push to codecov.io
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+# no spam
+notifications:
+  email: false
