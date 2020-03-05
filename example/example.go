@@ -1,21 +1,3 @@
-# gopml
-[![Build Status](https://travis-ci.org/dgo-/gopml.png?branch=master)](https://travis-ci.org/dgo-/gopml)
-[![codecov](https://codecov.io/gh/dgo-/gopml/branch/master/graph/badge.svg)](https://codecov.io/gh/dgo-/gopml)
-[![goreport](https://goreportcard.com/badge/github.com/dgo-/gopml)](https://goreportcard.com/report/github.com/dgo-/gopml)
-[![Go Doc](https://godoc.org/github.com/dgo-/gopml?status.svg)](https://godoc.org/github.com/dgo-/gopml)
-
-
-gopml is a Go package that parses .opml files.
-
-## Installation
-You can install it simple with go get:
-```
-go get github.com/dgo-/gopml
-```
-
-## Usage
-There a short example to that use most common functions:
-```
 package main
 
 import (
@@ -93,10 +75,3 @@ func main() {
 		}
 	}
 }
-```
-
-The plain example source code can be found in the example directory. 
-
-
-## License
-MIT
