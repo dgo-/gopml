@@ -197,13 +197,17 @@ func ParseFile(filePath string) (OPML, error) {
 func ParseHTTP(url string) (OPML, error) {
 	var opml OPML
 	res, err := http.Get(url)
-	if err == nil {
-		defer res.Body.Close()
-		content, err := ioutil.ReadAll(res.Body)
-		if err == nil {
-			opml, err = Parse(bytes.NewReader(content))
-		}
+	if err != nil {
+		return opml, err
 	}
+	defer res.Body.Close()
+
+	content, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		return opml, err
+	}
+
+	opml, err = Parse(bytes.NewReader(content))
 	return opml, err
 }
 

@@ -2,6 +2,7 @@ package gopml
 
 import (
 	"bytes"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
@@ -91,6 +92,7 @@ func TestParseString(t *testing.T) {
 
 func TestParseHTTP(t *testing.T) {
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintln(w, ResultTiny)
 	}))
 	defer ts.Close()
 
