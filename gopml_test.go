@@ -174,3 +174,22 @@ func TestParse_valid(t *testing.T) {
 		t.Error(err.Error())
 	}
 }
+
+func TestBool(t *testing.T) {
+	var ptr *oBool
+	if ptr.Bool() {
+		t.Error("should be retrun false if pointer is nil")
+	}
+
+	value := oBool(true)
+	ptr = &value
+	if !ptr.Bool() {
+		t.Error("should be retrun true if pointer is set to true")
+	}
+
+	value = oBool(false)
+	ptr = &value
+	if ptr.Bool() {
+		t.Error("should be retrun false is pointer is set to false")
+	}
+}
