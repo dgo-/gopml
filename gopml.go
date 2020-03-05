@@ -102,11 +102,11 @@ func (field oBool) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
 	return attr, nil
 }
 
-func (value *oBool) Bool() bool {
-	if value == nil {
+func (field *oBool) Bool() bool {
+	if field == nil {
 		return false
 	}
-	return bool(*value)
+	return bool(*field)
 }
 
 type oTime struct {
