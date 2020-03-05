@@ -12,10 +12,13 @@ import (
 
 const (
 	// Files for testing
-	FileDir     = "test_data/"
-	FileTiny    = "tiny.opml"
-	FileValid   = "valid.opml"
-	FileInvalid = "invalid.opml"
+	FileDir             = "test_data/"
+	FileTiny            = "tiny.opml"
+	FileValid           = "valid.opml"
+	FileInvalid         = "invalid.opml"
+	FileInvalidDate     = "invalid-date.opml"
+	FileInvalidDateAttr = "invalid-date-attr.opml"
+	FileInvalidBool     = "invalid-bool.opml"
 
 	//
 	TestWrite = "write.opml"
@@ -135,22 +138,27 @@ func TestWriteFile(t *testing.T) {
 	}
 }
 
-func TestParse(t *testing.T) {
+func TestParse_invalid(t *testing.T) {
 	// parse invalid file
-	inputfile := FileDir + FileInvalid
-	file, err := os.Open(inputfile)
-	if err != nil {
-		t.Error(err.Error())
-	}
+	invalidFiles := []string{FileInvalid, FileInvalidDate, FileInvalidDateAttr, FileInvalidBool}
+	for _, f := range invalidFiles {
+		inputfile := FileDir + f
+		file, err := os.Open(inputfile)
+		if err != nil {
+			t.Error(err.Error())
+		}
 
-	_, err = Parse(file)
-	if err == nil {
-		t.Error("parse somehow invalid file")
+		_, err = Parse(file)
+		if err == nil {
+			t.Error("parse somehow invalid file")
+		}
 	}
+}
 
+func TestParse_valid(t *testing.T) {
 	// parse working file
-	inputfile = FileDir + FileValid
-	file, err = os.Open(inputfile)
+	inputfile := FileDir + FileValid
+	file, err := os.Open(inputfile)
 	if err != nil {
 		t.Error(err.Error())
 	}

@@ -34,7 +34,7 @@
         <outline title="Tech" text="Tech">
             <outline text="Coding Horror" title="Coding Horror" type="rss" xmlUrl="http://feeds.feedburner.com/codinghorror/"/>
             <outline text="Gadget Lab" title="Gadget Lab" type="rss" xmlUrl="http://www.wired.com/gadgetlab/feed/"/>
-            <outline text="Gizmodo" title="Gizmodo" type="rss" xmlUrl="http://gizmodo.com/index.xml"/>
+            <outline text="Gizmodo" title="Gizmodo" isComment="" type="rss" xmlUrl="http://gizmodo.com/index.xml"/>
             <outline text="Reuters Technology" isComment="false" title="Reuters Technology" type="rss" xmlUrl="http://feeds.reuters.com/reuters/technologyNews" created="02 Jan 2006 15:04 MST"/>
         </outline>
     </body>

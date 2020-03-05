@@ -1,0 +1,10 @@
+<OPML version="1.0">
+	<head>
+		<title>tiny</title>
+    <dateCreated>not_time_string</dateCreated>
+	</head>
+	<body>
+		<outline text="text" title="tiny">
+    </outline>
+	</body>
+</OPML>
