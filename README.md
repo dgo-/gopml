@@ -15,7 +15,7 @@ go get github.com/dgo-/gopml
 
 ## Usage
 There a short example to that use most common functions:
-```
+```go
 package main
 
 import (
